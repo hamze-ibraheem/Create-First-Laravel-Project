@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +30,6 @@ Route::get('/admin/test3/{id?}', function () {
     return view('welcome');
 })->name('b');
 
+Route::namespace('Front')->group(function(){
+    Route::get('users','UserController@showAdminName');
+});

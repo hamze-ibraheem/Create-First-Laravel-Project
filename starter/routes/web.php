@@ -28,3 +28,4 @@ Route::get('/test3/{id?}', function () {
     return view('welcome');
 })->name('b');
 
+
