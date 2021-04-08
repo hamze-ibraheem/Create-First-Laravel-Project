@@ -30,6 +30,19 @@ Route::get('/admin/test3/{id?}', function () {
     return view('welcome');
 })->name('b');
 
-Route::namespace('Front')->group(function(){
-    Route::get('users','UserController@showAdminName');
+// Route::namespace('Front')->group(function(){
+//     Route::get('users','UserController@showAdminName');
+// });
+
+// Route::prefix('users')->group(function(){
+//     Route::get('show','UserController@showAdminName');
+//     Route::get('delete','UserController@deleteAdminName');
+// });
+
+Route::group(['prefix' => 'users','middleware'=>'auth'],function(){
+    Route::get('/',function(){
+        return 'work';
+    });
+    Route::get('show','UserController@showAdminName');
+    Route::get('delete','UserController@deleteAdminName');
 });
