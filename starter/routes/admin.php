@@ -46,3 +46,7 @@ Route::group(['prefix' => 'users','middleware'=>'auth'],function(){
     Route::get('show','UserController@showAdminName');
     Route::get('delete','UserController@deleteAdminName');
 });
+
+Route::group(['namespace'=>'Admin'],function(){
+    Route::get('second','SecondController@showString');
+});
