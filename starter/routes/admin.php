@@ -49,4 +49,9 @@ Route::group(['prefix' => 'users','middleware'=>'auth'],function(){
 
 Route::group(['namespace'=>'Admin'],function(){
     Route::get('second','SecondController@showString');
+    Route::get('second0','SecondController@showString0');
 });
+
+Route::get('login',function(){
+    return 'you must be logged in to access users!';
+})->name('login');
