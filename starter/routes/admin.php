@@ -55,3 +55,15 @@ Route::group(['namespace'=>'Admin'],function(){
 Route::get('login',function(){
     return 'you must be logged in to access users!';
 })->name('login');
+
+Route::resource('news', 'NewsController');
+
+/* you can replace all this route with resource route only as above route.
+**
+Route::get('news','NewsController@index');
+Route::post('news','NewsController@store');
+Route::get('news/create','NewsController@create');
+Route::get('news/{id}/edit','NewsController@edit');
+Route::post('update/{id}','NewsController@update');
+Route::delete('news/{id}','NewsController@destroy');
+*/
